@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
     // Use this for initialization
 
     public float speed;
+    public float jumpForce = 150;
     private bool isJump;
 	void Start () {
         this.speed = 5.0f;
@@ -31,7 +32,7 @@ public class Player : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (!isJump) {
                 isJump = true;
-                rigb.AddForce(new Vector3(0, 300, 0));
+                rigb.AddForce(new Vector3(0, jumpForce, 0));
             }
         }
         if (rigb.velocity == Vector3.zero) {
